@@ -1,0 +1,27 @@
+Comments
+belongs_to :users 
+belongs_to :inmates
+body 
+
+Users
+has_many :comments 
+user_id - integer
+bio - string
+picture - ??
+gender - string
+age - integer 
+
+Inmates
+has_many :users
+has_many :comments 
+has_many :users through :comments 
+
+contact - string
+upvote - integer 
+picture - ??
+name - string 
+gender - string 
+age - integer 
+charges - string
+release date - string 
+

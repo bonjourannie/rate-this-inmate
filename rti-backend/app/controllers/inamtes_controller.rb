@@ -1,0 +1,2 @@
+class InamtesController < ApplicationController
+end

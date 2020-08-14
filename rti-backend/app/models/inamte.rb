@@ -1,0 +1,2 @@
+class Inamte < ApplicationRecord
+end
