@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_14_003723) do
+ActiveRecord::Schema.define(version: 2020_08_22_180224) do
 
   create_table "inamtes", force: :cascade do |t|
     t.string "contact"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2020_08_14_003723) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "inmate_interests", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "interest_id"
+    t.integer "inmate_id"
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string "body"
     t.integer "user_id"
@@ -33,6 +43,12 @@ ActiveRecord::Schema.define(version: 2020_08_14_003723) do
     t.boolean "received_visible", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_interests", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "interest_id"
+    t.integer "inmate_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_08_14_003723) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "interests"
   end
 
 end
