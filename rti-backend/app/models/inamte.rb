@@ -1,2 +1,0 @@
-class Inamte < ApplicationRecord
-end

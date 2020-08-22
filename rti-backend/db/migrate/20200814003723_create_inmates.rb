@@ -1,6 +1,6 @@
-class CreateInamtes < ActiveRecord::Migration[6.0]
+class CreateInmates < ActiveRecord::Migration[6.0]
   def change
-    create_table :inamtes do |t|
+    create_table :inmates do |t|
       t.string :contact
       t.string :username
       t.integer :upvote

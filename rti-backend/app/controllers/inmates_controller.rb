@@ -1,0 +1,2 @@
+class InmatesController < ApplicationController
+end
