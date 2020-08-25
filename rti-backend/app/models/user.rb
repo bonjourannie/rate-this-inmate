@@ -28,19 +28,5 @@ def set_default_avatar
     end
 end
 
-def find_my_matches 
-    users = User.joins(:user_interests).where('user_interests.interest_id IN (?)', self.interest_ids).where.not(id: self.id)
-    if self.orientation == "Straight"
-      matches = users.select do |user|
-        user.gender != self.gender && self.orientation == user.orientation
-      end
-      matches.uniq
-    elsif self.orientation == "Lesbian" || self.orientation == "Gay"
-      matches = users.select do |user|
-        user.gender == self.gender && self.orientation == user.orientation
-      end
-      matches.uniq
-    end
-  end
-
+#  
 end

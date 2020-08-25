@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_182737) do
+ActiveRecord::Schema.define(version: 2020_08_25_230239) do
+
+  create_table "Comments", force: :cascade do |t|
+    t.string "body"
+    t.integer "user_id"
+    t.integer "inmate_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "inmate_interests", force: :cascade do |t|
     t.integer "user_id"
