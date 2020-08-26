@@ -10,6 +10,7 @@ has_many :sent_messages, class_name: "Message", dependent: :destroy
 has_many :received_messages, class_name: "Message", foreign_key: "match_id", dependent: :destroy
 
 has_many :messages
+has_many :comments
 
 validates_presence_of :username, :email, :gender
 validates_presence_of :interests, :length => {:minuim => 2}

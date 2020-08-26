@@ -1,2 +1,0 @@
-class InmatesController < ApplicationController
-end

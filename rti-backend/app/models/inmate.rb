@@ -1,7 +1,7 @@
 class Inmate < ApplicationRecord
     has_one_attached :avatar
 
-    has_secure_password
+    has_many :comments, as: :commentable
 
     has_many :inmate_interests, dependent: :destroy
     has_many :interests, through: :inmate_interests
