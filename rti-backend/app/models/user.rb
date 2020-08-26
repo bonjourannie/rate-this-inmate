@@ -12,10 +12,7 @@ has_many :received_messages, class_name: "Message", foreign_key: "match_id", dep
 has_many :messages
 has_many :comments
 
-validates_presence_of :username, :email, :gender
-validates_presence_of :interests, :length => {:minuim => 2}
-validates_uniqueness_of :email, :username 
-validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+validates_presence_of :username, :gender
 
 before_create :set_default_avatar
 
