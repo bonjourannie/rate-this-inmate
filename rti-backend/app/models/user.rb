@@ -1,20 +1,19 @@
 class User < ApplicationRecord
-has_one_attached :avatar
+#has_one_attached :avatar
 
 has_secure_password
 
-has_many :user_interests, dependent: :destroy
-has_many :interests, through: :user_interests
 
 has_many :sent_messages, class_name: "Message", dependent: :destroy
 has_many :received_messages, class_name: "Message", foreign_key: "match_id", dependent: :destroy
 
 has_many :messages
 has_many :comments
+has_many :comments, as: :commentable
 
 validates_presence_of :username, :gender
 
-before_create :set_default_avatar
+#before_create :set_default_avatar
 
 def set_default_avatar
     if self.gender == "Male"
@@ -26,5 +25,5 @@ def set_default_avatar
     end
 end
 
-#  
+
 end
