@@ -10,6 +10,7 @@ class Api::V1::InmatesController < ApplicationController
             render json: @inmate
         else 
             render json: {error: 'error creating inmate'}
+        end
     end
     #I don't think I want to create inmates. Use API instead
     
