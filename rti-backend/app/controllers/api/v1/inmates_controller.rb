@@ -11,11 +11,16 @@ class Api::V1::InmatesController < ApplicationController
         else 
             render json: {error: 'error creating inmate'}
     end
+    #I don't think I want to create inmates. Use API instead
     
     def show 
+        @inmate = Inmate.find(params[:id])
+        render json: @inmate
     end
     
-    def delete 
+    def destroy
+        @inmate = Inmate.find(params[:id])
+        @inmate.destroy 
     end
 
     private 
