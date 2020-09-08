@@ -10,7 +10,6 @@ class Api::V1::UsersController < ApplicationController
             render json: @user 
         else 
             render json: {error: 'there was an error creating your account'}
-   
         end
     end
     
