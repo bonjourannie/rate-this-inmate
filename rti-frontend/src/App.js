@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-
-class App extends React.Component {
+class App extends Component {
 
 
 
@@ -10,9 +9,9 @@ class App extends React.Component {
       <div className="App">
         App
       </div>
-    );
+    )
   }
 }
 
 
-export default App;
+export default App

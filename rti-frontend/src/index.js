@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import thunk from 'redux-thunk'
-import {Provider} from 'redux-store' //any component wrapped in Provider gets access to store
-import {createStore, applyMiddleware, compose} from 'redux'
-
+import {createStore, applyMiddleware, compose} from 'redux';
 import App from './App';
+
+import thunk from 'redux-thunk';
+import {Provider} from 'react-redux';
+import {BrowserRouter as Router} from 'react-router-dom'
+
+import inmateReducer from './reducers/inmateReducer'
+
+
 
 // store holds (stores) data globally
 // reducer tells you what to do with/update store based on actions
-
+//might need combineReducer later
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancer = composeEnhancers(
@@ -16,7 +21,7 @@ const enhancer = composeEnhancers(
   // other store enhancers if any
 );
 
-const store = createStore(reducer, enhancer);
+const store = createStore(inmateReducer, enhancer)
 
 ReactDOM.render(
   <React.StrictMode>
