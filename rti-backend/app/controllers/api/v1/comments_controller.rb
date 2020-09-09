@@ -27,7 +27,7 @@ class Api::V1::CommentsController < ApplicationController
     private 
     
     def set_inmate
-        @inmate += Inmate.find(params[:inmate_id])
+        @inmate = Inmate.find(params[:inmate_id])
     end
 
     def comment_params 
