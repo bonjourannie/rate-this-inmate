@@ -8,3 +8,4 @@
 
 user = User.create(username: 'AlexV', age: '35', location: 'ur heart', password: 'password', gender: 'male', looking_for: 'women', bio: 'Im just here so I dont get fined', interests: 'real housewives')
 inmate = Inmate.create(username: 'wet wet', gender: 'female', age: '45', charges: 'too sexy', release_date: 'May 2025', looking_for: 'men')
+comment = Comment.create(body: 'come home to me mama', user_id: 2, inmate_id: 2)
