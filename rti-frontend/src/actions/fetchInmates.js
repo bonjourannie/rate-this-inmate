@@ -6,7 +6,7 @@
 
 
 
-export function fetchInamtes(){
+export function fetchInmates(){
     return (dispatch) => {
         fetch ("https://jailbase-jailbase.p.rapidapi.com/recent/", {
             "method": "GET",
