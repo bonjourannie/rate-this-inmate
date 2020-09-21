@@ -11,7 +11,7 @@
 # comment = Comment.create(body: 'come home to me mama', user_id: 2, inmate_id: 2)
 
 def inmates
-    response = RestClient.get 'https://jailbase-jailbase.p.rapidapi.com/recent/'
+  response = RestClient.get 'https://jailbase-jailbase.p.rapidapi.com/recent/'
     json = JSON.parse response
   
     if !json.nil?
@@ -21,4 +21,4 @@ def inmates
     else
       puts "error fetching inmates"
     end
-  end
+end
