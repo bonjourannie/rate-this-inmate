@@ -6,8 +6,8 @@
 
 
 
-export function fetchInmates() {
-    reutrn (dispatch) => {
+export function fetchInamtes(){
+    return (dispatch) => {
         fetch ("https://jailbase-jailbase.p.rapidapi.com/recent/", {
             "method": "GET",
             "headers": {
@@ -16,9 +16,9 @@ export function fetchInmates() {
             }
         })
         .then(resp => resp.json())
-        .then(crafts => dispatch({
+        .then(inmates => dispatch({
             type: 'FETCH_INMATES',
-            payload: crafts
+            payload: inmates
         }) )
     }
 }
