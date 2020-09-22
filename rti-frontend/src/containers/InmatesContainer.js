@@ -12,9 +12,9 @@ import {fetchInmates} from '../actions/fetchInmates'
 
 class InmatesContainer extends Component {
 
-    componentDidMount(){
-        this.props.fetchInmates()
-    }
+    // componentDidMount(){
+    //     this.props.fetchInmates()
+    // }
     //give access to store through props
     //when this container mounts, we have to make a request to backend
     //react & redux don't hold state if you refresh 
@@ -23,6 +23,7 @@ class InmatesContainer extends Component {
         return (
             <div>
                 {/* <NavBar />  */}
+                sdhf
                 <Switch>
                     will be routes/links to InmatesList and Inmate
                 </Switch>
@@ -32,10 +33,10 @@ class InmatesContainer extends Component {
 
 }
 
-const mapStateToProps = state => {
-    return {
-        inmates: state.inmates 
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         inmates: state.inmates 
+//     }
+// }
 
-export default connect(mapStateToProps, {fetchInmates})(InmatesContainer);
+export default (InmatesContainer);

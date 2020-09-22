@@ -4,5 +4,5 @@
 //inamtes array now points to array that came back from fetch request
 export default function inmateReducer (state = {inmates: []}, action){
 
-    return state
+    return action.payload
 }

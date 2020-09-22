@@ -8,7 +8,7 @@
 
 export function fetchInmates(){
     return (dispatch) => {
-        fetch ("https://jailbase-jailbase.p.rapidapi.com/recent/", {
+        fetch ("https://jailbase-jailbase.p.rapidapi.com/recent/?source_id=fl-mdc", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "jailbase-jailbase.p.rapidapi.com",
