@@ -9,11 +9,11 @@
 export function fetchInmates(){
     return (dispatch) => {
         fetch ("https://jailbase-jailbase.p.rapidapi.com/recent/?source_id=fl-mdc", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "jailbase-jailbase.p.rapidapi.com",
-                "x-rapidapi-key": "5a8b2d2c90mshbe395b4a25ced29p180267jsn00f7c327bfbe"
-            }
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "jailbase-jailbase.p.rapidapi.com",
+            "x-rapidapi-key": "5a8b2d2c90mshbe395b4a25ced29p180267jsn00f7c327bfbe"
+        }
         })
         .then(resp => resp.json())
         .then(inmates => dispatch({

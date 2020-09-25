@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-// import InmateList from '../components/InmatetList'
-// import InmateInput from '../components/InmateInput'
+import InmateList from '../components/InmateList'
+import InmateInput from '../components/InmateInput'
 // import InmateShow from '../components/InmateShow'
 import {connect} from 'react-redux';
 import {Route, Switch} from 'react-router-dom'
@@ -12,9 +12,9 @@ import {fetchInmates} from '../actions/fetchInmates'
 
 class InmatesContainer extends Component {
 
-    // componentDidMount(){
-    //     this.props.fetchInmates()
-    // }
+    componentDidMount(){
+        this.props.fetchInmates()
+    }
     //give access to store through props
     //when this container mounts, we have to make a request to backend
     //react & redux don't hold state if you refresh 
@@ -23,7 +23,9 @@ class InmatesContainer extends Component {
         return (
             <div>
                 {/* <NavBar />  */}
-                sdhf
+                InmatesContainer
+                <InmateList inmates={this.props.inmates}/>
+                <InmateInput/>
                 <Switch>
                     will be routes/links to InmatesList and Inmate
                 </Switch>
@@ -33,10 +35,10 @@ class InmatesContainer extends Component {
 
 }
 
-// const mapStateToProps = state => {
-//     return {
-//         inmates: state.inmates 
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        inmates: state.inmates 
+    }
+}
 
-export default (InmatesContainer);
+export default connect(mapStateToProps, {fetchInmates})(InmatesContainer)

@@ -3,6 +3,12 @@
 //whatever is returned from reducer is new redux state 
 //inamtes array now points to array that came back from fetch request
 export default function inmateReducer (state = {inmates: []}, action){
+// debugger;
+    switch(action.type){
+        case 'FETCH_INMATES':
+            return {inmates: action.payload.records}
+            default:
+            return state
+    }
 
-    return action.payload
 }
