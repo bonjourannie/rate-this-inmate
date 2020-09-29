@@ -14,11 +14,11 @@ const InmateList = ({inmates}) => {
     return(
         <div>
             {inmates.map(inmate => 
-            <ul>
+            <ul key = {inmate.id}>
                 Name: {inmate.name} <br/>
                 Charges: {inmate.charges}<br/>
                 mugshot <br/>
-                <img src ={inmate.mugshot}/> <br/>
+                <img src ={inmate.mugshot} alt = "mugshot"/> <br/>
                 Booked on {inmate.book_date_formatted}
             </ul>)}
         </div>
